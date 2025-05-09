@@ -1,0 +1,23 @@
+{
+  "resources/css/cacharreria.css": {
+    "file": "assets/cacharreria-DxonLHOG.css",
+    "src": "resources/css/cacharreria.css",
+    "isEntry": true
+  },
+  "resources/css/pinateria.css": {
+    "file": "assets/pinateria-D1L4N2UO.css",
+    "src": "resources/css/pinateria.css",
+    "isEntry": true
+  },
+  "resources/css/style.css": {
+    "file": "assets/style-CCyizxGu.css",
+    "src": "resources/css/style.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DRnP_ogC.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

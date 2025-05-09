@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Pinateria') }}</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+
+    <!-- Scripts -->
+    @vite(['resources/css/pinateria.css', 'resources/css/style.css', 'resources/js/app.js'])
+
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar">
+            <a class="brand navbar-brand" href="{{ url('pinateria') }}">Piñatería</a>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="{{ url('/') }}">Inicio</a></li>
+                <li><a href="#">Globos latex</a></li>
+                <li><a href="#">Metalizados</a></li>
+                <li><a href="#">Fiesta</a></li>
+                <li><a href="#" class="active">Piñatería</a></li>
+                @guest
+                    @if (Route::has('login'))
+                        <li>
+                            <a class="login-btn" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                        </li>
+                    @endif
+
+                    @if (Route::has('register'))
+                        <li>
+                            <a href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                                                 document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+
+            </ul>
+        </nav>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row text-start">
+
+                <!-- Columna 1 -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold">CONTÁCTENOS</h6>
+                    <ul class="list-unstyled">
+                        <li>Dirección</li>
+                        <li>Teléfonos</li>
+                        <li>Correo</li>
+                        <li>Redes Sociales</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold">CORPORATIVO</h6>
+                    <ul class="list-unstyled">
+                        <li>Enlace 1</li>
+                        <li>Enlace 2</li>
+                        <li>Enlace 3</li>
+                        <li>Enlace 4</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold">TIENDA ONLINE</h6>
+                    <ul class="list-unstyled">
+                        <li>Enlace 1</li>
+                        <li>Enlace 2</li>
+                        <li>Enlace 3</li>
+                        <li>Enlace 4</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4 -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold">SUSCRÍBETE A NUESTRO NEWSLETTER</h6>
+                    Recibe las mejores ofertas directamente en tu buzón
+                    <button class="btn btn-warning btn-sm">Suscribirse</button>
+                </div>
+
+            </div>
+        </div>
+        <p class="text-center">&copy; 2025 Tienda. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
