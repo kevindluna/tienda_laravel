@@ -187,4 +187,5 @@
         </div>
     </section>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.appPinateria', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Tienda-Laravel\resources\views/pinateria/index.blade.php ENDPATH**/ ?>

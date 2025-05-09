@@ -72,7 +72,7 @@
             </ul>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 ">
             <?php echo $__env->yieldContent('content'); ?>
         </main>
     </div>
@@ -81,7 +81,7 @@
             <div class="row text-start">
 
                 <!-- Columna 1 -->
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <h6 class="fw-bold">CONTÁCTENOS</h6>
                     <ul class="list-unstyled">
                         <li>Dirección</li>
@@ -92,7 +92,7 @@
                 </div>
 
                 <!-- Columna 2 -->
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <h6 class="fw-bold">CORPORATIVO</h6>
                     <ul class="list-unstyled">
                         <li>Enlace 1</li>
@@ -103,7 +103,7 @@
                 </div>
 
                 <!-- Columna 3 -->
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <h6 class="fw-bold">TIENDA ONLINE</h6>
                     <ul class="list-unstyled">
                         <li>Enlace 1</li>
@@ -114,7 +114,7 @@
                 </div>
 
                 <!-- Columna 4 -->
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <h6 class="fw-bold">SUSCRÍBETE A NUESTRO NEWSLETTER</h6>
                     Recibe las mejores ofertas directamente en tu buzón
                     <button class="btn btn-warning btn-sm">Suscribirse</button>
