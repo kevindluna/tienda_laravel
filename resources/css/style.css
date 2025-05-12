@@ -23,7 +23,7 @@ main {
 }
 
 .navbar {
-    height: 7vh;
+    height: 10vh;
 }
 
 .login-button a {
@@ -44,7 +44,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 93vh;
+    min-height: 90vh;
 }
 
 /* Bloques de categoría */

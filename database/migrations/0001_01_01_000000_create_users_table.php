@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('lastname', 10)->nullable();
             $table->unsignedBigInteger('id_rol');
             $table->string('email', 30)->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 
             $table->foreign('id_rol')->references('id')->on('roles')->onDelete('cascade');

@@ -25,6 +25,32 @@
         </div>
     </section>
 
+        <!-- CARRUSEL DE PRODUCTOS -->
+    <section class="productos-pinateria">
+        <h2>Descuentos Piñatería </h2>
+
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="movePrev()">&#10094;</button>
+            <div class="slider-viewport">
+                <div class="slider-track row flex-nowrap " id="sliderTrack">
+                    <?php $__currentLoopData = $productos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $producto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="producto-carrusel">
+                            <div class="descuento-etiqueta"><?php echo e($producto->Descuento->descuento); ?>%</div>
+
+                            <img src="../img/pinateria/descuentos/<?php echo e($producto->ImagenRuta); ?>" alt="<?php echo e($producto->Nombre); ?>">
+
+                            <h3><?php echo e($producto->Nombre); ?></h3>
+                            <p><?php echo e($producto->Descripcion); ?></p>
+                            <button class="comprar-btn">Comprar ahora</button>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>
+
+            <button class="slider-btn next" onclick="moveNext()">&#10095;</button>
+        </div>
+    </section>
+
     <!-- DESTACADOS -->
     <section class="destacados">
         <h2>Descuentos Productos Más Comprados</h2>
@@ -77,31 +103,9 @@
         </div>
     </section>
 
-    <!-- CARRUSEL DE PRODUCTOS -->
-    <section class="productos-pinateria">
-        <h2>Descuentos Piñatería </h2>
+    <!-- CATEGORIAS -->
+    <?php echo $__env->make('includes.productos', ['cantidad' => 4], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
-        <div class="slider-container">
-            <button class="slider-btn prev" onclick="movePrev()">&#10094;</button>
-            <div class="slider-viewport">
-                <div class="slider-track row flex-nowrap " id="sliderTrack">
-                    <?php $__currentLoopData = $productos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $producto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="producto">
-                            <div class="descuento-etiqueta"><?php echo e($producto->Descuento->descuento); ?>%</div>
-
-                            <img src="../img/pinateria/descuentos/" alt="<?php echo e($producto->Nombre); ?>">
-
-                            <h3><?php echo e($producto->Nombre); ?></h3>
-                            <p><?php echo e($producto->Descripcion); ?></p>
-                            <button class="comprar-btn">Comprar ahora</button>
-                        </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </div>
-            </div>
-
-            <button class="slider-btn next" onclick="moveNext()">&#10095;</button>
-        </div>
-    </section>
 
     <!-- CATEGORIAS -->
     <section class="container py-5">

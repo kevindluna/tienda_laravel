@@ -25,6 +25,32 @@
         </div>
     </section>
 
+        <!-- CARRUSEL DE PRODUCTOS -->
+    <section class="productos-pinateria">
+        <h2>Descuentos Piñatería </h2>
+
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="movePrev()">&#10094;</button>
+            <div class="slider-viewport">
+                <div class="slider-track row flex-nowrap " id="sliderTrack">
+                    @foreach ($productos as $producto)
+                        <div class="producto-carrusel">
+                            <div class="descuento-etiqueta">{{ $producto->Descuento->descuento }}%</div>
+
+                            <img src="../img/pinateria/descuentos/{{ $producto->ImagenRuta}}" alt="{{ $producto->Nombre }}">
+
+                            <h3>{{ $producto->Nombre }}</h3>
+                            <p>{{ $producto->Descripcion }}</p>
+                            <button class="comprar-btn">Comprar ahora</button>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <button class="slider-btn next" onclick="moveNext()">&#10095;</button>
+        </div>
+    </section>
+
     <!-- DESTACADOS -->
     <section class="destacados">
         <h2>Descuentos Productos Más Comprados</h2>
@@ -77,31 +103,9 @@
         </div>
     </section>
 
-    <!-- CARRUSEL DE PRODUCTOS -->
-    <section class="productos-pinateria">
-        <h2>Descuentos Piñatería </h2>
+    <!-- CATEGORIAS -->
+    @include('includes.productos', ['cantidad' => 4])
 
-        <div class="slider-container">
-            <button class="slider-btn prev" onclick="movePrev()">&#10094;</button>
-            <div class="slider-viewport">
-                <div class="slider-track row flex-nowrap " id="sliderTrack">
-                    @foreach ($productos as $producto)
-                        <div class="producto">
-                            <div class="descuento-etiqueta">{{ $producto->Descuento->descuento }}%</div>
-
-                            <img src="../img/pinateria/descuentos/" alt="{{ $producto->Nombre }}">
-
-                            <h3>{{ $producto->Nombre }}</h3>
-                            <p>{{ $producto->Descripcion }}</p>
-                            <button class="comprar-btn">Comprar ahora</button>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <button class="slider-btn next" onclick="moveNext()">&#10095;</button>
-        </div>
-    </section>
 
     <!-- CATEGORIAS -->
     <section class="container py-5">

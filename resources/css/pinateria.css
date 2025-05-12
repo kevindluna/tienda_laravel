@@ -299,9 +299,8 @@ h2 {
 
 /* Carrusel - Móvil */
 @media (max-width: 768px) {
-
     /* Productos carrusel */
-    .producto {
+    .producto-carrusel {
         flex: 0 0 45%;
         font-size: 12px;
         padding: 6px;
