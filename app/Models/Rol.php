@@ -16,4 +16,10 @@ class Rol extends Model
     protected $fillable = [
         'rol',
     ];
+
+    // Relacion de uno a muchos
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'id_rol', 'id');
+    }
 }

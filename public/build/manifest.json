@@ -1,6 +1,6 @@
 {
   "resources/css/cacharreria.css": {
-    "file": "assets/cacharreria-1qnAtNiv.css",
+    "file": "assets/cacharreria-DpHuP8bo.css",
     "src": "resources/css/cacharreria.css",
     "isEntry": true
   },
@@ -10,12 +10,17 @@
     "isEntry": true
   },
   "resources/css/pinateria.css": {
-    "file": "assets/pinateria-C6eGqYx_.css",
+    "file": "assets/pinateria-DgcMBWlU.css",
     "src": "resources/css/pinateria.css",
     "isEntry": true
   },
+  "resources/css/productos.css": {
+    "file": "assets/productos-CLBAiX6-.css",
+    "src": "resources/css/productos.css",
+    "isEntry": true
+  },
   "resources/css/style.css": {
-    "file": "assets/style-8BPnrM2U.css",
+    "file": "assets/style-PrBdlU_B.css",
     "src": "resources/css/style.css",
     "isEntry": true
   },

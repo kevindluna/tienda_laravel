@@ -14,10 +14,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Rutas de  piñateria
 
-Route::get('/pinateria', [PinateriaController::class, 'index'])->name('pinateria.ver');
-Route::get('/cacharreria', function(){
-    return view('cacharreria/index');
-});
+Route::get('/pinateria', [PinateriaController::class, 'index'])->name('pinateria.index');
+Route::get('/pinateria/productos', [PinateriaController::class, 'viewProducts'])->name('pinateria.productos');
+
+// Rutas de Cacharreria
+
+Route::get('/cacharreria', function(){return view('cacharreria/index');});
 
 
 

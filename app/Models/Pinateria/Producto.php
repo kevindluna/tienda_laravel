@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Pinateria;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use PHPStan\Rules\Functions\ReturnNullsafeByRefRule;
 
-class Descuento extends Model
+class Producto extends Model
 {
     use HasFactory;
+    // Nombre de la conexión a la base de datos
+    protected $connection = 'mysqlPinateria';
 
     // Nombre de la tabla (opcional si sigue la convención)
-    protected $table = 'descuentos';
+    protected $table = 'productos';
 
     // Nombre de la clave primaria (opcional si se llama 'id')
     protected $primaryKey = 'Id';
@@ -24,11 +25,15 @@ class Descuento extends Model
     protected $fillable = [
         'codigo',
         'nombre',
-        'descuento',
+        'descripcion',
+        'id_marca',
+        'id_garantia',
+        'id_categoria',
+        'activo'
     ];
 
-    public function producto()
+    public function descuento()
     {
-        return $this->belongsTo(Producto::class, 'codigo', 'codigo');
+        return $this->belongsTo(Descuento::class, 'codigo', 'codigo');    
     }
 }

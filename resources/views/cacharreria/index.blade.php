@@ -79,6 +79,6 @@
 
 
     
-    @include(view: 'includes.categoria')
+    @include('includes.categoria')
 
 @endsection

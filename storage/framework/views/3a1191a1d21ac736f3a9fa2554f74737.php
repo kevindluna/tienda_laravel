@@ -35,7 +35,7 @@
                 <li><a href="#">Globos latex</a></li>
                 <li><a href="#">Metalizados</a></li>
                 <li><a href="#">Fiesta</a></li>
-                <li><a href="#" class="active">Piñatería</a></li>
+                <li><a href="<?php echo e(url('pinateria/productos')); ?>" class="active">Productos</a></li>
                 <?php if(auth()->guard()->guest()): ?>
                     <?php if(Route::has('login')): ?>
                         <li>
