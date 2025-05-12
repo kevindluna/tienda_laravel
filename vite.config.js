@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/style.css',
                 'resources/css/pinateria.css',
                 'resources/css/cacharreria.css',
+                'resources/css/login.css',
                 'resources/js/app.js',
             ],
             refresh: true,

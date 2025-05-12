@@ -1,9 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="full-screen-container">
         <!-- Piñatería -->
-        <a href="{{ url('pinateria') }}" class="category-block pinateria-bg">
+        <a href="<?php echo e(url('pinateria')); ?>" class="category-block pinateria-bg">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <div class="category-title">Piñatería</div>
@@ -16,7 +14,7 @@
         </a>
 
         <!-- Cacharrería -->
-        <a href="{{ url('cacharreria') }}" class="category-block cacharreria-bg">
+        <a href="<?php echo e(url('cacharreria')); ?>" class="category-block cacharreria-bg">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <div class="category-title">Cacharrería</div>
@@ -41,4 +39,6 @@
             </div>
         </a>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\tienda_laravel\resources\views/home.blade.php ENDPATH**/ ?>
