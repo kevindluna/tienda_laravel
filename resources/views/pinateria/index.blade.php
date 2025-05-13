@@ -35,12 +35,12 @@
                 <div class="slider-track row flex-nowrap " id="sliderTrack">
                     @foreach ($productos as $producto)
                         <div class="producto-carrusel">
-                            <div class="descuento-etiqueta">{{ $producto->Descuento->descuento }}%</div>
+                            <div class="descuento-etiqueta">{{ $producto->Descuento->porcentaje }}%</div>
 
-                            <img src="../img/pinateria/descuentos/{{ $producto->ImagenRuta}}" alt="{{ $producto->Nombre }}">
+                            <img src="../img/pinateria/descuentos/{{$producto->imagenes->first()->url_imagen }}" alt="{{ $producto->nombre }} {{ $producto->imagenes->first()->url_imagen}}">
 
-                            <h3>{{ $producto->Nombre }}</h3>
-                            <p>{{ $producto->Descripcion }}</p>
+                            <h3>{{ $producto->nombre }}</h3>
+                            <p>{{ $producto->descripcion }}</p>
                             <button class="comprar-btn">Comprar ahora</button>
                         </div>
                     @endforeach

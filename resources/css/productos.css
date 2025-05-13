@@ -2,16 +2,18 @@
 
 .productos {
     margin: 2rem auto;
+    padding: 2rem;
 }
 
-.categorias {
+.filtroValor {
     display: block;
-    padding-left: .5rem;
+    padding: 0 0.5rem;
+    border-radius: 10px;
     background-color: rgba(102, 51, 153, 0);
 }
 
-.categoria input {
-    margin-right: 0.5rem;
+.filtroValor span {
+    margin-left: 0.5rem;
 }
 
 .producto {
@@ -46,12 +48,10 @@
 }
 
 .producto-info button {
-    background-color: var(--color3);
-    border-color: var(--color3);
-
+    background-color: var(--DeepPink);
+    border: none;
     &:hover {
-        background-color: var(--color1);
-        border-color: var(--color1);
+        background-color: #9e2863;
     }
 }
 

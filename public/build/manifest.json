@@ -14,8 +14,13 @@
     "src": "resources/css/pinateria.css",
     "isEntry": true
   },
+  "resources/css/producto.css": {
+    "file": "assets/producto-CGEZQ2pe.css",
+    "src": "resources/css/producto.css",
+    "isEntry": true
+  },
   "resources/css/productos.css": {
-    "file": "assets/productos-CLBAiX6-.css",
+    "file": "assets/productos-D3AxnMt4.css",
     "src": "resources/css/productos.css",
     "isEntry": true
   },

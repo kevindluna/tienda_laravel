@@ -16,6 +16,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/pinateria', [PinateriaController::class, 'index'])->name('pinateria.index');
 Route::get('/pinateria/productos', [PinateriaController::class, 'viewProducts'])->name('pinateria.productos');
+Route::get('/pinateria/producto/{codigo}/{nombre}', [PinateriaController::class, 'viewProduct'])->name('pinateria.producto');
 
 // Rutas de Cacharreria
 

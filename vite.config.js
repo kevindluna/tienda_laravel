@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/css/cacharreria.css',
                 'resources/css/login.css',
                 'resources/css/productos.css',
+                'resources/css/producto.css',
                 'resources/js/app.js',
             ],
             refresh: true,

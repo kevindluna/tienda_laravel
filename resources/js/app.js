@@ -183,3 +183,15 @@ window.addEventListener("load", () => {
     startAutoSlide();
 });
 
+const incrementButton = document.querySelector("#increment").succ;
+const decrementButton = document.querySelector("#decrement");
+const quantityInput = document.querySelector("#quantity");
+
+incrementButton.addEventListener("click", () => {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+    console.log(quantityInput.value);
+});
+decrementButton.addEventListener("click", () => {
+    quantityInput.value = parseInt(quantityInput.value) - 1;
+});
+

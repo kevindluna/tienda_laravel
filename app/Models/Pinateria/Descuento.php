@@ -33,6 +33,6 @@ class Descuento extends Model
 
     public function producto()
     {
-        return $this->belongsTo(Producto::class, 'codigo', 'codigo');
+        return $this->belongsTo(Producto::class, 'producto_codigo', 'codigo');
     }
 }
