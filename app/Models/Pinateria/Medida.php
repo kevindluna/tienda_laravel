@@ -5,24 +5,22 @@ namespace App\Models\Pinateria;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
+class Medida extends Model
 {
     use HasFactory;
-    // Nombre de la conexión a la base de datos
+
     protected $connection = 'mysqlPinateria';
 
-    protected $table = 'categorias';
+    protected $table = 'medidas';
 
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'nombre'
+        'nombre',
     ];
 
-    public function productos()
+    public function  precios_productos()
     {
-        return $this->hasMany(Producto::class, 'id_categoria', 'id');
+        return $this->hasMany(Producto::class, 'id_medida', 'id');
     }
-
-    
 }

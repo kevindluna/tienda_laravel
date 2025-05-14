@@ -12,6 +12,7 @@ export default defineConfig({
                 'resources/css/productos.css',
                 'resources/css/producto.css',
                 'resources/js/app.js',
+                'resources/js/producto.js',
             ],
             refresh: true,
         }),

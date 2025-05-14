@@ -18,6 +18,14 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <h4>Tamaños</h4>
+                <div class="row m-0">
+                    <?php $__currentLoopData = $medidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $medida): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="filtroValor col-6">
+                            <input type="checkbox" name="" id=""><span><?php echo e($medida->nombre); ?></span>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
             </div>
 
             <div class="col-xl-9 col-sm-12">
@@ -38,7 +46,8 @@
                                     <div class="producto-info">
                                         <?php echo e($producto->nombre); ?>
 
-                                        <h5 class="align-middle">$ <?php echo e(number_format($producto->precios->precio_actual, 0)); ?>
+                                        <h5 class="align-middle">$
+                                            <?php echo e(number_format($producto->precios->first()->precio_actual, 0)); ?>
 
                                         </h5>
                                         <div class="d-grid gap-2">

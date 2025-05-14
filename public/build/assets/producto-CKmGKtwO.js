@@ -1,0 +1,1 @@
+const e=document.getElementById("quantity");function t(){e.value=parseInt(e.value)}function n(){e.value=parseInt(e.value)+1,t()}function u(){e.value=parseInt(e.value)-1,t()}e.addEventListener("input",t);document.getElementById("decrement").addEventListener("click",u);document.getElementById("increment").addEventListener("click",n);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pinateria\Atributo;
+use App\Models\Pinateria\Medida;
 use App\Models\Pinateria\Producto;
 use Illuminate\Http\Request;
 
@@ -32,16 +33,20 @@ class PinateriaController extends Controller
 
         $atributos = Atributo::with(relations: 'valores')->get();
 
+        $medidas = Medida::all();
+
         // dd($productos->toArray());
 
         // dd($atributos->toArray());
 
-        return view('pinateria/productos', ['productos' => $productos, 'atributos' => $atributos]);
+        // dd($medidas->toArray());
+
+        return view('pinateria/productos', ['productos' => $productos, 'atributos' => $atributos, 'medidas' => $medidas]);
     }
 
     public function viewProduct($codigo)
     {
-        $producto = Producto::with('precios', 'imagenes', 'garantia', 'marca', 'categoria')->where('codigo', $codigo)->first();
+        $producto = Producto::with('precios.medida', 'precios.paquete', 'imagenes', 'garantia', 'marca', 'categoria')->where('codigo', $codigo)->first();
         
         // dd($producto->toArray());
         

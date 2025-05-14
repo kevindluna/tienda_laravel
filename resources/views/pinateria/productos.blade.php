@@ -18,6 +18,14 @@
                         @endforeach
                     </div>
                 @endforeach
+                <h4>Tamaños</h4>
+                <div class="row m-0">
+                    @foreach ($medidas as $medida)
+                        <div class="filtroValor col-6">
+                            <input type="checkbox" name="" id=""><span>{{ $medida->nombre }}</span>
+                        </div>
+                    @endforeach
+                </div>
             </div>
 
             <div class="col-xl-9 col-sm-12">
@@ -37,7 +45,8 @@
                                         alt="{{ $producto->nombre }}">
                                     <div class="producto-info">
                                         {{ $producto->nombre }}
-                                        <h5 class="align-middle">$ {{ number_format($producto->precios->precio_actual, 0) }}
+                                        <h5 class="align-middle">$
+                                            {{ number_format($producto->precios->first()->precio_actual, 0) }}
                                         </h5>
                                         <div class="d-grid gap-2">
                                             <button class="btn btn-success">Comprar ahora</button>

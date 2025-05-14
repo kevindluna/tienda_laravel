@@ -52,11 +52,6 @@ class Producto extends Model
         return $this->belongsTo(Categoria::class, 'id_categoria', 'id');
     }
 
-    public function precios()
-    {
-        return $this->belongsTo(Precios::class, 'codigo', 'producto_codigo');
-    }
-
     public function imagenes()
     {
         return $this->hasMany(ImagenProducto::class, 'producto_codigo', 'codigo');
@@ -65,5 +60,10 @@ class Producto extends Model
     public function atributos()
     {
         return $this->hasMany(ProductoAtributo::class, 'producto_codigo', 'codigo');
+    }
+
+    public function precios()
+    {
+        return $this->hasMany(PrecioProducto::class, 'producto_codigo', 'codigo');
     }
 }

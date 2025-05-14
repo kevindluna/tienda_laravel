@@ -100,3 +100,46 @@ input[type="number"] {
     border-radius: 0 50% 50% 0;
     color: green;
 }
+.btn-pm{
+    background-color: var(--DeepPink);
+    color: white;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    margin-top: 0px;
+    /* 🔽 más cerca del código */
+    &:hover {
+        background-color: #bd2672;
+        color: white;
+    }
+
+    &:active {
+        background-color: #bd2672;
+        color: white;
+        scale: 0.9;
+    }
+
+}
+
+.btn-compra{
+    background-color: var(--DeepPink);
+    color: white;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0px;
+    /* 🔽 más cerca del código */
+    &:hover {
+        background-color: #bd2672;
+        color: white;
+    }
+
+    &:active {
+        background-color: #bd2672;
+        color: white;
+        scale: 0.95;
+    }
+}

@@ -15,7 +15,7 @@
     "isEntry": true
   },
   "resources/css/producto.css": {
-    "file": "assets/producto-CGEZQ2pe.css",
+    "file": "assets/producto-Dr7gO3Cr.css",
     "src": "resources/css/producto.css",
     "isEntry": true
   },
@@ -33,6 +33,12 @@
     "file": "assets/app-DRnP_ogC.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/producto.js": {
+    "file": "assets/producto-CKmGKtwO.js",
+    "name": "producto",
+    "src": "resources/js/producto.js",
     "isEntry": true
   }
 }
