@@ -1,0 +1,107 @@
+{
+    "codigo": 70001,
+    "nombre": "Numero 32\"#0 Color Dorado",
+    "descripcion": "Globo met\u00e1lico n\u00famero 0 dorado",
+    "id_categoria": 1,
+    "id_marca": 1,
+    "activo": 1,
+    "id_garantia": 2,
+    "precios": [
+        {
+            "id": 1,
+            "producto_codigo": 70001,
+            "id_paquete": 6,
+            "id_medida": 8,
+            "precio_actual": "20000.00",
+            "precio_anterior": "25000.00",
+            "medida": {
+                "id": 8,
+                "nombre": "R-36"
+            },
+            "paquete": {
+                "id": 6,
+                "nombre": "PAQUETE X 10",
+                "cantidad": 10
+            }
+        },
+        {
+            "id": 11,
+            "producto_codigo": 70001,
+            "id_paquete": 8,
+            "id_medida": 8,
+            "precio_actual": "35000.00",
+            "precio_anterior": "40000.00",
+            "medida": {
+                "id": 8,
+                "nombre": "R-36"
+            },
+            "paquete": {
+                "id": 8,
+                "nombre": "PAQUETE X 20",
+                "cantidad": 20
+            }
+        },
+        {
+            "id": 12,
+            "producto_codigo": 70001,
+            "id_paquete": 5,
+            "id_medida": 8,
+            "precio_actual": "8000.00",
+            "precio_anterior": "10000.00",
+            "medida": {
+                "id": 8,
+                "nombre": "R-36"
+            },
+            "paquete": {
+                "id": 5,
+                "nombre": "PAQUETE X 5",
+                "cantidad": 5
+            }
+        },
+        {
+            "id": 13,
+            "producto_codigo": 70001,
+            "id_paquete": 7,
+            "id_medida": 2,
+            "precio_actual": "4000.00",
+            "precio_anterior": "5000.00",
+            "medida": {
+                "id": 2,
+                "nombre": "R-5"
+            },
+            "paquete": {
+                "id": 7,
+                "nombre": "PAQUETE X 12",
+                "cantidad": 12
+            }
+        }
+    ],
+    "imagenes": [
+        {
+            "id": 1,
+            "url_imagen": "1.png",
+            "descripcion": "portada",
+            "orden": 1,
+            "producto_codigo": 70001
+        },
+        {
+            "id": 11,
+            "url_imagen": "2.png",
+            "descripcion": "segunda imagen",
+            "orden": 2,
+            "producto_codigo": 70001
+        }
+    ],
+    "garantia": {
+        "id": 2,
+        "garantia": "Sin garantia"
+    },
+    "marca": {
+        "id": 1,
+        "nombre": "Globostar"
+    },
+    "categoria": {
+        "id": 1,
+        "nombre": "Accesorio para Fiesta"
+    }
+}

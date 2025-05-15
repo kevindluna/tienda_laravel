@@ -11,18 +11,20 @@
                 <?php $__currentLoopData = $atributos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $atributo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <h4><?php echo e($atributo->nombre); ?></h4>
                     <div class="row m-0">
-                        <?php $__currentLoopData = $atributo->valores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $valor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = $atributo->valores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $valor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="filtroValor col-6">
-                                <input type="checkbox" name="" id=""><span><?php echo e($valor->valor); ?></span>
+                                <input type="checkbox" name="valor[<?php echo e($index); ?>]" id="valor[<?php echo e($index); ?>]">
+                                <label for="valor[<?php echo e($index); ?>]"><?php echo e($valor->valor); ?></label>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <h4>Tamaños</h4>
                 <div class="row m-0">
-                    <?php $__currentLoopData = $medidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $medida): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $medidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $medida): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="filtroValor col-6">
-                            <input type="checkbox" name="" id=""><span><?php echo e($medida->nombre); ?></span>
+                            <input type="checkbox" name="medida[<?php echo e($index); ?>]" id="medida[<?php echo e($index); ?>]">
+                            <label for="medida[<?php echo e($index); ?>]"><?php echo e($medida->nombre); ?></label>
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>

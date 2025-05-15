@@ -17,20 +17,20 @@ class PrecioProducto extends Model
 
     protected $fillable = [
         'producto_codigo',
-        'id_paquete',
-        'id_medida',
+        'id_presentacion',
+        'id_tamano',
         'precio_actual',
         'precio_anterior'
     ];
 
-    public function paquete()
+    public function presentacion()
     {
-        return $this->belongsTo(Paquete::class, 'id_paquete', 'id');
+        return $this->belongsTo(Presentacion::class, 'id_presentacion', 'id');
     }
 
-    public function medida()
+    public function tamano()
     {
-        return $this->belongsTo(Medida::class, 'id_medida', 'id');
+        return $this->belongsTo(Tamano::class, 'id_tamano', 'id');
     }
 
     public function producto()

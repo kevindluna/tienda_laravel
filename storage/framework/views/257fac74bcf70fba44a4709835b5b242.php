@@ -17,9 +17,6 @@
                     <img src="../../../img/pinateria/descuentos/<?php echo e($producto->imagenes->first()->url_imagen); ?>"
                         alt="<?php echo e($producto->nombre); ?>">
                 </div>
-
-
-
             </div>
             <div class="col-md-6">
                 <div class="product-info">
@@ -28,20 +25,32 @@
                     <p>Codigo: <?php echo e($producto->codigo); ?></p>
 
                     Medidas:
-                    <div class="mt-1 mb-3 mx-0">
-                        <?php $__currentLoopData = $producto->precios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $precio): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="">
-                                <button id="btnMedida<?php echo e($index); ?>" class="btn-pm"><?php echo e($precio->medida->nombre); ?></button>
-                            </div>
+                    <div class="mt-1 mb-3 mx-0 d-flex" id="tamanos">
+                        <?php $__currentLoopData = $producto->precios->sortBy(function ($precio) {
+                return (int) preg_replace('/\D/', '', $precio->tamano->nombre);
+            })->unique('id_tamano'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $precio): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($loop->first): ?>
+                                <button id="btnTamano[<?php echo e($index); ?>]" name="btnTamano[<?php echo e($index); ?>]"
+                                    class="btn-pm me-2 btn-pm-active"><?php echo e($precio->tamano->nombre); ?></button>
+                            <?php else: ?>
+                                <button id="btnTamano[<?php echo e($index); ?>]" name="btnTamano[<?php echo e($index); ?>]"
+                                    class="btn-pm me-2"><?php echo e($precio->tamano->nombre); ?></button>
+                            <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
 
                     Paquetes:
-                    <div class="mt-1 mb-3 mx-0">
-                        <?php $__currentLoopData = $producto->precios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $precio): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="">
-                                <button id="btnPaquete<?php echo e($index); ?>" class="btn-pm"><?php echo e($precio->paquete->nombre); ?></button>
-                            </div>
+                    <div class="mt-1 mb-3 mx-0 d-flex paquetes" id="presentaciones">
+                        <?php $__currentLoopData = $producto->precios->sortBy(function ($precio) {
+                return (int) preg_replace('/\D/', '', $precio->presentacion->nombre);
+            })->unique('id_presentacion'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $precio): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($loop->first): ?>
+                                <button id="btnPresentacion[<?php echo e($index); ?>]" name="btnPresentacion[<?php echo e($index); ?>]"
+                                    class="btn-pm me-2 btn-pm-active"><?php echo e($precio->presentacion->nombre); ?></button>
+                            <?php else: ?>
+                                <button id="btnPresentacion[<?php echo e($index); ?>]" name="btnPresentacion[<?php echo e($index); ?>]"
+                                    class="btn-pm me-2"><?php echo e($precio->presentacion->nombre); ?></button>
+                            <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
 
@@ -60,6 +69,10 @@
             </div>
         </div>
     </section>
+    
+    <script>
+        window.producto = <?php echo json_encode($producto, 15, 512) ?>;
+    </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.appPinateria', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Tienda-Laravel\resources\views/pinateria/producto.blade.php ENDPATH**/ ?>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pinateria\Atributo;
-use App\Models\Pinateria\Medida;
+use App\Models\Pinateria\Tamano;
 use App\Models\Pinateria\Producto;
 use Illuminate\Http\Request;
 
@@ -18,6 +18,7 @@ class PinateriaController extends Controller
             ->limit(15)
             ->get();
         */
+
         $productos = Producto::with('precios', 'imagenes')->join('descuentos', 'productos.codigo', '=', 'descuentos.producto_codigo')
         ->where('descuentos.porcentaje', '>', 1)
         ->limit(15)->get();
@@ -33,7 +34,7 @@ class PinateriaController extends Controller
 
         $atributos = Atributo::with(relations: 'valores')->get();
 
-        $medidas = Medida::all();
+        $medidas = Tamano::all();
 
         // dd($productos->toArray());
 
@@ -46,10 +47,12 @@ class PinateriaController extends Controller
 
     public function viewProduct($codigo)
     {
-        $producto = Producto::with('precios.medida', 'precios.paquete', 'imagenes', 'garantia', 'marca', 'categoria')->where('codigo', $codigo)->first();
+        $producto = Producto::with('precios.tamano', 'precios.presentacion', 'imagenes', 'garantia', 'marca', 'categoria')->where('codigo', $codigo)->first();
+
+        $productoArray = $producto->toArray();
+
+        // dd($producto->__tostring());
         
-        // dd($producto->toArray());
-        
-        return view('pinateria/producto', ['producto' => $producto]);
+        return view('pinateria/producto', ['producto' => $producto, 'productoArray' => $productoArray]);
     }
 }

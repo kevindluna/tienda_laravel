@@ -11,18 +11,20 @@
                 @foreach ($atributos as $atributo)
                     <h4>{{ $atributo->nombre }}</h4>
                     <div class="row m-0">
-                        @foreach ($atributo->valores as $valor)
+                        @foreach ($atributo->valores as $index => $valor)
                             <div class="filtroValor col-6">
-                                <input type="checkbox" name="" id=""><span>{{ $valor->valor }}</span>
+                                <input type="checkbox" name="valor[{{ $index }}]" id="valor[{{ $index }}]">
+                                <label for="valor[{{ $index }}]">{{ $valor->valor }}</label>
                             </div>
                         @endforeach
                     </div>
                 @endforeach
                 <h4>Tamaños</h4>
                 <div class="row m-0">
-                    @foreach ($medidas as $medida)
+                    @foreach ($medidas as $index => $medida)
                         <div class="filtroValor col-6">
-                            <input type="checkbox" name="" id=""><span>{{ $medida->nombre }}</span>
+                            <input type="checkbox" name="medida[{{ $index }}]" id="medida[{{ $index }}]">
+                            <label for="medida[{{ $index }}]">{{ $medida->nombre }}</label>
                         </div>
                     @endforeach
                 </div>
