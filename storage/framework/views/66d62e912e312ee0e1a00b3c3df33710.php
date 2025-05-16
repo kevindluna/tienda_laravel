@@ -43,7 +43,7 @@
                             <a href="<?php echo e(route('pinateria.producto', ['codigo' => $producto->codigo, 'nombre' => $producto->nombre])); ?>"
                                 class="btn-producto">
                                 <div class="producto">
-                                    <img src="../img/pinateria/descuentos/<?php echo e($producto->imagenes->first()->url_imagen); ?>"
+                                    <img src="<?php echo e(asset('img/pinateria/productos/' . $producto->imagenes->first()->url_imagen)); ?>"
                                         alt="<?php echo e($producto->nombre); ?>">
                                     <div class="producto-info">
                                         <?php echo e($producto->nombre); ?>

@@ -470,6 +470,7 @@ h2 {
     cursor: pointer;
     font-size: 11px;
     margin-top: 0px;
+    text-decoration: none;
     /* 🔽 más cerca del código */
 
     &:hover {

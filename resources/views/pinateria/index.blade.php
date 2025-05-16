@@ -37,11 +37,11 @@
                         <div class="producto-carrusel">
                             <div class="descuento-etiqueta">{{ $producto->Descuento->porcentaje }}%</div>
 
-                            <img src="../img/pinateria/descuentos/{{$producto->imagenes->first()->url_imagen }}" alt="{{ $producto->nombre }} {{ $producto->imagenes->first()->url_imagen}}">
+                            <img src="{{ asset('img/pinateria/productos/' . $producto->imagenes->first()->url_imagen) }}" alt="{{ $producto->nombre }} {{ $producto->imagenes->first()->url_imagen}}">
 
                             <h3>{{ $producto->nombre }}</h3>
                             <p>{{ $producto->descripcion }}</p>
-                            <button class="comprar-btn">Comprar ahora</button>
+                            <a href="{{ route('pinateria.producto', ['codigo' => $producto->codigo, 'nombre' => $producto->nombre]) }}" class="comprar-btn">Comprar ahora</a>
                         </div>
                     @endforeach
                 </div>
@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <!-- CATEGORIAS -->
+    <!-- PRODUCTOS -->
     @include('includes.productos', ['cantidad' => 4])
 
 

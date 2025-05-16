@@ -43,7 +43,7 @@
                             <a href="{{ route('pinateria.producto', ['codigo' => $producto->codigo, 'nombre' => $producto->nombre]) }}"
                                 class="btn-producto">
                                 <div class="producto">
-                                    <img src="../img/pinateria/descuentos/{{ $producto->imagenes->first()->url_imagen }}"
+                                    <img src="{{ asset('img/pinateria/productos/' . $producto->imagenes->first()->url_imagen) }}"
                                         alt="{{ $producto->nombre }}">
                                     <div class="producto-info">
                                         {{ $producto->nombre }}

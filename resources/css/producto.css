@@ -1,6 +1,6 @@
-.producto {
+.container-producto {
     margin: 0 auto;
-    padding: 3em 0;
+    padding: 3em 0 0;
 }
 
 img {
@@ -27,6 +27,19 @@ img {
     object-fit: cover;
     width: 100%;
     background: rgba(0, 0, 0, 0.4);
+}
+
+.mini-img img {
+    cursor: pointer;
+    opacity: .7;
+
+    &:hover {
+        opacity: 1;
+    }
+}   
+
+.active {
+    opacity: 1 !important;
 }
 
 .producto-info {

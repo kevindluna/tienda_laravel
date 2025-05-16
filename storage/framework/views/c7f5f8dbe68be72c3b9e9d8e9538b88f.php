@@ -37,11 +37,11 @@
                         <div class="producto-carrusel">
                             <div class="descuento-etiqueta"><?php echo e($producto->Descuento->porcentaje); ?>%</div>
 
-                            <img src="../img/pinateria/descuentos/<?php echo e($producto->imagenes->first()->url_imagen); ?>" alt="<?php echo e($producto->nombre); ?> <?php echo e($producto->imagenes->first()->url_imagen); ?>">
+                            <img src="<?php echo e(asset('img/pinateria/productos/' . $producto->imagenes->first()->url_imagen)); ?>" alt="<?php echo e($producto->nombre); ?> <?php echo e($producto->imagenes->first()->url_imagen); ?>">
 
                             <h3><?php echo e($producto->nombre); ?></h3>
                             <p><?php echo e($producto->descripcion); ?></p>
-                            <button class="comprar-btn">Comprar ahora</button>
+                            <a href="<?php echo e(route('pinateria.producto', ['codigo' => $producto->codigo, 'nombre' => $producto->nombre])); ?>" class="comprar-btn">Comprar ahora</a>
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <!-- CATEGORIAS -->
+    <!-- PRODUCTOS -->
     <?php echo $__env->make('includes.productos', ['cantidad' => 4], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 

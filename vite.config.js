@@ -7,6 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/style.css',
                 'resources/css/pinateria.css',
+                'resources/css/pinateria/dashboard.css',
+                'resources/js/pinateria/dashboard.js',
                 'resources/css/cacharreria.css',
                 'resources/css/login.css',
                 'resources/css/productos.css',
